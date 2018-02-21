@@ -16,3 +16,7 @@ resource "aws_subnet" "dev_subnet" {
   }
 
 }
+
+output "dev_subnetID" {
+  value = "${aws_subnet.dev_subnet.id}"
+}

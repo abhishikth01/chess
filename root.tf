@@ -59,3 +59,19 @@ module "mod_dev_pub_route" {
 
   tagname = "dev_public_route"
 }
+
+module "mod_dev_rt_association1" {
+  source = "./network/rtAsct/"
+
+  subnetID = "${module.mod_dev_pub_sub1.dev_subnetID}"
+  RouteTableID = "${module.mod_dev_pub_route.dev_routetable}"
+  
+}
+
+module "mod_dev_rt_association2" {
+  source = "./network/rtAsct/"
+
+  subnetID = "${module.mod_dev_pub_sub2.dev_subnetID}"
+  RouteTableID = "${module.mod_dev_pub_route.dev_routetable}"
+  
+}

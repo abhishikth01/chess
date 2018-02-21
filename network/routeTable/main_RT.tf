@@ -15,3 +15,7 @@ resource "aws_route_table" "dev_routetable" {
     Name = "${var.tagname}"
   }
 }
+
+output "dev_routetable" {
+  value = "${aws_route_table.dev_routetable.id}"
+}

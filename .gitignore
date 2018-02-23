@@ -1,3 +1,4 @@
 .gitignore
 terraform*
 .terraform*
+infra/dmz/variable.tf

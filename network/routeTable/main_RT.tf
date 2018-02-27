@@ -2,6 +2,7 @@ variable "destination_cidr" {}
 variable "target" {}
 variable "vpc_id" {}
 variable "tagname" {}
+variable "nat_inst" {}
 
 resource "aws_route_table" "dev_routetable" {
   vpc_id     = "${var.vpc_id}"
@@ -9,6 +10,7 @@ resource "aws_route_table" "dev_routetable" {
   route {
     cidr_block = "${var.destination_cidr}"
     gateway_id = "${var.target}"
+    instance_id = "${var.nat_inst}"
   }
 
   tags {
